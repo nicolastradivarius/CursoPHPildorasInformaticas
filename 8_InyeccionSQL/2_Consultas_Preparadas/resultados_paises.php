@@ -37,7 +37,8 @@
         //segundo paso: preparamos la consulta sql con la función mysqli_prepare(). Esta funcion requiere dos parámetros: $conexion y $query
         $stmt_object = mysqli_prepare($conexion, $query);
 
-        //tercer paso: unimos los parametros a la sentencia sql. De esto se encarga la funcion mysqli_stmt_bind_param(). Devuelve true o false. Esta funcion requiere tres parametros: el objeto mysqli_stmt (devuelto por mysqli_prepare y que guardamos en $stmt_object), el tipo de dato que se utilizara como criterio en la query, y la variable con criterio
+        //tercer paso: unimos los parametros a la sentencia sql. De esto se encarga la funcion mysqli_stmt_bind_param(). Devuelve true o false.
+        // Esta funcion requiere tres parametros: el objeto mysqli_stmt (devuelto por mysqli_prepare y que guardamos en $stmt_object), el tipo de dato que se utilizara como criterio en la query, y la variable con criterio
         $state = mysqli_stmt_bind_param($stmt_object, "s", $pais);
 
         //cuarto paso: ejecutar la consulta con mysqli_stmt_execute(), y devuelve true o false. Esta funcion requiere como parametro stmt_object
