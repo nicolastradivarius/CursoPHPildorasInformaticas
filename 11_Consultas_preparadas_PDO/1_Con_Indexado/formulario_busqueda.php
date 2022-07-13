@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="pagina_busqueda_pdo.php" method="get">
+    <form action="pagina_busqueda.php" method="get">
         <label for="">Buscar: </label>
         <input type="text" name="buscar">
         <input type="submit" value="Enviar">
