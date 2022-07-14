@@ -1,10 +1,12 @@
 <?php
 
-    require ("devuelve_productos.php");
+    require ("Devuelve_Productos.php");
+
+    $busqueda_pais = $_GET["buscar"];
 
     $conexion_productos = new Devuelve_Productos();
 
-    $array_productos = $conexion_productos->getProductos();
+    $array_productos = $conexion_productos->getProductos($busqueda_pais);
 ?>
 
 <!DOCTYPE html>
