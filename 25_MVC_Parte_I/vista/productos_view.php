@@ -1,0 +1,1 @@
+<!-- Este archivo se encarga de construir la vista para el usuario -->

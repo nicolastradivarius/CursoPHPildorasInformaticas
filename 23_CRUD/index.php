@@ -6,7 +6,6 @@
   <title>CRUD</title>
   <link rel="stylesheet" type="text/css" href="hoja.css">
 
-
 </head>
 
 <body>
@@ -17,7 +16,34 @@
 
   $db_table = "datos_usuarios";
 
-  $db_query = "SELECT * FROM $db_table";
+  //-------------------------------------- PAGINACION --------------------------------------\\
+
+  $page_size = 3;
+
+  if (isset($_GET["page"])) {
+    if ($_GET["page"] === 1) {
+      header("location: index.php");
+    } else {
+      $actual_page = $_GET["page"];
+    }
+  } else {
+    $actual_page = 1;
+  }
+
+  $start_from = ($actual_page - 1) * $page_size;
+
+
+  $db_query = "SELECT COUNT(*) FROM $db_table";
+  $resultset = $db_connection->prepare($db_query);
+  $resultset->execute();
+  $nro_registros = $resultset->fetchColumn();
+  $resultset->closeCursor();
+
+  $total_pages = ceil($nro_registros / $page_size);
+
+  //------------------------------------ END PAGINACION ------------------------------------\\
+
+  $db_query = "SELECT * FROM $db_table LIMIT $start_from, $page_size";
   //no es necesario hacer consultas preparadas porque no hay ninguna insercion de informacion por parte del usuario y que le de lugar a hacer inyeccion sql
   // prepare() se utiliza con consultas preparadas con parámetros y query() con consultas planas, sin parámetros.
   // $resultset = $db_connection->query($db_query);
@@ -40,7 +66,7 @@
 
     $resultset = $db_connection->prepare($db_query);
 
-    $resultset->execute(array(":nombre"=>$nombre, ":apellido"=>$apellido, ":direccion"=>$direccion));
+    $resultset->execute(array(":nombre" => $nombre, ":apellido" => $apellido, ":direccion" => $direccion));
 
     //es necesario refrescar la pagina una vez mas (aunque ya se haya refrescado al pulsar el boton Insertar)
     //ya que de esta forma se realiza de nuevo la busqueda en la bbdd y se muestran todos los campos existentes
@@ -107,6 +133,17 @@
     </table>
 
   </form>
+
+  <?php
+  echo "<br>";
+  echo "<div class='centrado'>";
+  for ($i = 1; $i <= $total_pages; $i++) {
+    echo "<a style='text-decoration: none', href='?page=$i'>$i</a>";
+    echo "&nbsp";
+  }
+  echo "</div>";
+
+  ?>
 
   <p>&nbsp;</p>
 </body>

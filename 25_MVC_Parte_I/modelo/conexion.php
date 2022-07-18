@@ -1,0 +1,1 @@
+<!-- Archivo encargado de conectar con la BBDD -->
