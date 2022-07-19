@@ -1,1 +1,0 @@
-<!-- Este archivo se encarga de gestionar las comunicaciones entre los archivos del modelo y la vista. Es decir, es el intermediario -->

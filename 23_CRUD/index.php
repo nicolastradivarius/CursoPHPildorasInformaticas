@@ -81,7 +81,6 @@
 
   <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
 
-
     <table width="50%" border="0" align="center">
       <tr>
         <td class="primera_fila">ID</td>
@@ -92,7 +91,6 @@
         <td class="sin">&nbsp;</td>
         <td class="sin">&nbsp;</td>
       </tr>
-
 
       <?php
       foreach ($registros as $usuario) :
