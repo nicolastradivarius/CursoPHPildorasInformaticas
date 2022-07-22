@@ -7,7 +7,7 @@
 
     define('DB_PASSWORD', '');
 
-    define('DB_NAME', 'pruebas');
+    define('DB_NAME', 'cursophp');
 
     define('DB_CHARSET', 'utf8');
 ?>

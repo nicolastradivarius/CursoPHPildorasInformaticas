@@ -16,6 +16,8 @@ try {
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         $ruta_img = $row["FOTO"];
     }
+
+    $conexion = null;
 } catch (Exception $e) {
     die($e->getMessage() . ". Línea: " . $e->getLine());
 }

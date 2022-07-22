@@ -7,7 +7,7 @@
 // contraseña de la bbdd: ""
 
     $db_host="localhost";
-    $db_name="pruebas";
+    $db_name="cursophp";
     $db_user="root";
     $db_password="";
 ?>
