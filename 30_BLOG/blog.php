@@ -60,7 +60,7 @@
                 
                 echo "<h3>" . $row["TITULO"] . "</h3>";
                 echo "<h4>" . $row["FECHA"] . "</h4>";
-                echo "<div style='max-width: 500px; border: 1px solid black; word-wrap: break-word;'>" . $row["COMENTARIOS"] . "</div><br><br>";
+                echo "<div style='max-width: 500px; border: 1px solid black; word-wrap: break-word;'>" . $row["COMENTARIOS"] . "</div><br>";
                 
                 if ($row["IMAGEN"] && file_exists("imagenes/" . $row["IMAGEN"])) {
                     echo "<img src='imagenes/" . $row["IMAGEN"] . "' width='300px'/>";

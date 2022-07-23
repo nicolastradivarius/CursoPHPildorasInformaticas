@@ -4,6 +4,7 @@ Debe recoger la informacion introducida en el formulario e interaccionando con m
 <?php
 
 require_once("../config.php");
+
 include_once("../modelo/entrada_blog.php");
 include_once("../modelo/manejo_entradas.php");
 
@@ -55,9 +56,13 @@ try {
     );
 
     $manejo_entradas->insertarContenido($entrada);
-    echo "<br>Entrada de blog agregada con exito.";
+    echo "<br>Entrada de blog agregada con exito.<br>";
 } catch (Exception $e) {
     die($e->getMessage());
 }
+
+echo '<a href="../vista/formulario.html">Ir al formulario</a>';
+echo "<br>";
+echo '<a href="../vista/mostrar_blog.php">Ir al blog</a>';
 
 ?>
