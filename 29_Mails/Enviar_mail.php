@@ -20,7 +20,7 @@ $apellido = $_POST["apellido"];
 $asunto = $_POST["asunto"];
 // $headers = "MIME-Version: 1.0\r\n";
 // $headers .= "Content-type: text/html; charset='utf8'\r\n";
-// $headers .= "From: Prueba Nicolas < nic9olas@hotmail.com >\r\n";
+// $headers .= "From: Prueba Nicolas < xxxxxxxxxxxxx@hotmail.com >\r\n";
 
 try {
     //Server settings
@@ -28,7 +28,7 @@ try {
     $mail->isSMTP();                                            //Send using SMTP
     $mail->Host       = 'smtp.gmail.com';                       //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = 'gonzaleznicolas574@gmail.com';         //SMTP username
+    $mail->Username   = 'xxxxxxxxxxxxxxxx@gmail.com';         //SMTP username
     $mail->Password   = 'consultar en la cuenta';                     //SMTP password
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
     $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
@@ -36,9 +36,9 @@ try {
 
     //Recipients
     //en principio setFrom() deberia tener como primer argumento el mismo
-    //username que puse antes: gonzaleznicolas574@gmail.com
-    $mail->setFrom('gonzaleznicolas574@gmail.com', 'Nicolás Test');
-    $mail->addAddress('nic9olas@hotmail.com', 'Nicolás Hotmail');     //Add a recipient
+    //username que puse antes: xxxxxxxxxxxxxxxxxxxx@gmail.com
+    $mail->setFrom('xxxxxxxxxxxxxxxxxx@gmail.com', 'Nicolás Test');
+    $mail->addAddress('xxxxxxxxxxxxxxxxxx@hotmail.com', 'Nicolás Hotmail');     //Add a recipient
     // $mail->addReplyTo('info@example.com', 'Information');
     // $mail->addCC('cc@example.com');
     // $mail->addBCC('bcc@example.com');
